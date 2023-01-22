@@ -40,4 +40,12 @@ let operation = 'multiply';
 const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
 
-const result = operation === 'multiply' ? multiply(a, b) : divide(a, b);
+const result = operation === 'multiply' ? multiply(5, 8) : divide(3, 2);
+console.log(result);
+
+const ageToDrive = 40;
+let drive;
+
+drive = ageToDrive > 40 ? true : false;
+
+console.log(drive);
