@@ -12,3 +12,12 @@ const sentence = words.join(' '); // \n es un salto de linea en la terminal
 // }
 
 console.log(sentence);
+
+let sentence2 = ''
+
+for (let i = 0; i < words.length; i++) {
+    sentence2 += words[i];
+    sentence += ' ';
+}
+
+console.log(sentence2)
