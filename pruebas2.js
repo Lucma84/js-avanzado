@@ -63,3 +63,17 @@ function XO(str) {
 
 const xo = XO('');
 console.log(xo);
+
+let pilotsReduce = [
+  { id: 2, name: 'Juano', years: 0 },
+  { id: 2, name: 'Juano', years: 5 },
+  { id: 8, name: 'Juano', years: 2 },
+  { id: 6, name: 'Juano', years: 152 },
+  { id: 5, name: 'Juano', years: 52 },
+];
+
+let mostExpPilot = pilotsReduce.reduce((oldest, pilot) => {
+  return oldest.years > pilot.years ? oldest : pilot
+}, {});
+
+console.log(mostExpPilot)
