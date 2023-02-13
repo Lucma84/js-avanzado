@@ -336,21 +336,20 @@ console.log(getOddNumbers());
 
 const result = ['3:1', '2:2', '0:1'];
 
-function getTotalPoints (games) {
-    let points = 0; 
-    games.map((game) => {;
-        if (game[0] > game[2]) {
-            points += 3;
-        } else if (game[0] === game[2]) {
-            points += 1;
-        }
-    })
+function getTotalPoints(games) {
+  let points = 0;
+  games.map((game) => {
+    if (game[0] > game[2]) {
+      points += 3;
+    } else if (game[0] === game[2]) {
+      points += 1;
+    }
+  });
 
-    return points;
+  return points;
 }
 
 console.log(getTotalPoints(['3:1', '2:2', '0:1']));
-
 
 // Los puntos se otorgan por cada partido de la siguiente manera:
 
@@ -360,3 +359,139 @@ console.log(getTotalPoints(['3:1', '2:2', '0:1']));
 // Necesitamos escribir una función que tome esta colección y devuelva la cantidad de puntos que nuestro equipo (x) obtuvo en el campeonato según las reglas dadas anteriormente.
 
 // 0 <= y <= 4
+
+const dogsArray = [
+  {
+    name: 'Antonia',
+    mood: 'serious',
+  },
+  {
+    name: 'Juan',
+    mood: 'guapo',
+  },
+  {
+    name: 'Pedro',
+    mood: 'muy perro',
+  },
+];
+
+const copyDogsArray2 = [...dogsArray];
+dogsArray[0].mood = 'Guarro';
+console.log(dogsArray);
+console.log(dogsArray);
+
+// const copyDogsArray = structuredClone(dogsArray); // Con structuredClone te copia el array y no pasa nada porq lo modifiques.
+
+function mystery() {
+  var results = { sanity: 'Hello' };
+  return results;
+}
+
+// Devuelve el número (recuento) de vocales en la cadena dada.
+
+// Consideraremos a, e, i, o, u como vocales para este Kata (pero no y).
+
+// La cadena de entrada solo constará de letras minúsculas y/o espacios.
+
+function getCount(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    const letter = str[i];
+    if (
+      letter === 'a' ||
+      letter === 'e' ||
+      letter === 'i' ||
+      letter === 'o' ||
+      letter === 'u'
+    ) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+const vocalsInString = getCount('abracadabra');
+console.log(vocalsInString);
+
+function hamming(a, b) {
+  let count = 0;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) {
+      count += 1;
+    }
+  }
+
+  return count;
+}
+
+const totalHamming = hamming('I like turtles', 'I like turkeys');
+console.log(totalHamming);
+
+function opposite(number) {
+  return -number;
+}
+
+const oppositeNumber = opposite(4.25);
+console.log(oppositeNumber);
+
+function addLength(str) {
+  const strSplitted = str
+    .split(' ')
+    .map((string) => `${string} ${string.length}`);
+  // stringsWithNumber = []
+  // for (let i = 0; i < strSplitted.length; i++) {
+  //     let string = strSplitted[i];
+  //     stringsWithNumber.push(`${string} ${string.length}`)
+  // }
+  // return stringsWithNumber
+  return strSplitted;
+}
+
+const string = addLength('apple ban banana');
+console.log(string);
+
+// Tenemos que devolver un array que ponga la palabra y la longitud de la misma
+
+function correct(string) {
+  return string.replaceAll(0, 'O').replaceAll(5, 'S').replaceAll(1, 'I');
+}
+
+const correctString = correct('L0ND0N');
+console.log(correctString);
+
+// S is misinterpreted as 5
+// O is misinterpreted as 0
+// I is misinterpreted as 1
+
+const quarterOf = (month) => {
+  if (month <= 3) {
+    return 1;
+  } else if (month <= 6) {
+    return 2;
+  } else if (month <= 9) {
+    return 3;
+  } else {
+    return 4;
+  }
+};
+
+console.log(quarterOf());
+
+const getDocumentationTemplate = (url, title) => {
+  return `
+  <div class="favorite-element">
+    <a href="${url}" target="__blank">${title}</a>
+  </div>
+  `;
+};
+
+// Tienes que crear un método que corrija una cadena de tiempo dada.
+// Además, había un problema, por lo que muchas de las cadenas de tiempo están rotas.
+// La hora se formatea usando el reloj de 24 horas, de 00:00:00 a 23:59:59.
+// Ejemplos
+// "09:10:01" -> "09:10:01"
+// "11:70:10" -> "12:10:10"
+// "19:99:99" -> "20:40:39"
+// "24:01:01" -> "00:01:01"
+
+
